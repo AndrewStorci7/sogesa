@@ -14,16 +14,11 @@
 		echo "";
 		die();
 	}
-
-	if(mysqli_num_rows($result)==0)
-	{
-		echo "";
-		die();
-	}
 	$num_rows = mysqli_num_rows($result);
 	$jsonResult='';
+	$jsonResult.='{"eventi":[';
 	if($num_rows>0){
-			$jsonResult.='{"eventi":[';
+
 	$cntrow=0;
 	while($row=mysqli_fetch_assoc($result))
 	{
@@ -49,7 +44,7 @@
 		}
 		$jsonResult.='{"id":"'.$id.'","titolo":"'.$titolo.'","dataEv":"'.$dataEv.'","tipo":"'.$tipo.'","desc":"'.$desc.'","meteo":"'.$meteo.'"}';
 	}
-			$jsonResult.=']}';
 	}
+	$jsonResult.=']}';
 	echo(json_encode($jsonResult));
 	?>
