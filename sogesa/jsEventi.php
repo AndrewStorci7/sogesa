@@ -4,10 +4,10 @@
 		var dataEv='';
 	var pager=1;
 	$(document).ready(function() {
-		jQuery.post('viewEventi.php',  {titolo: titolo,tipo: tipo,dataEv: dataEv,pager: pager}, viewList, 'json');
-		jQuery.post('listTipi.php',  {}, viewTipiCerca, 'json');
-		jQuery.post('pageEventi.php',  {titolo: titolo,tipo: tipo,dataEv: dataEv,pager: pager}, pagerView, 'json');
-		jQuery.post('calEventi.php',  {}, calendarView, 'json');
+		jQuery.post('viewEventi.php', {titolo: titolo,tipo: tipo,dataEv: dataEv,pager: pager}, viewList, 'json');
+		jQuery.post('listTipi.php', {}, viewTipiCerca, 'json');
+		jQuery.post('pageEventi.php', {titolo: titolo,tipo: tipo,dataEv: dataEv,pager: pager}, pagerView, 'json');
+		jQuery.post('calEventi.php', {}, calendarView, 'json');
 	});
 
 	$( "#cerca" ).click(function() {
@@ -64,7 +64,7 @@
 					x=x+'</table>';
 					}
 		$("#risultato").html(x);
-					
+
 
 	}
 
@@ -86,8 +86,8 @@ var curday=(yyyy+sp+mm+sp+dd);
      risultato+=" editable: true,";
      risultato+=" eventLimit: true, ";
      risultato+=" events: [";
-	
-	
+
+
 		var obj = JSON.parse(data);
 		var objCal=obj.eventi;
 
@@ -95,22 +95,23 @@ var curday=(yyyy+sp+mm+sp+dd);
 			risultato+="{";
           	risultato+="title: '"+objCal[i].titolo+"',";
           	risultato+="url: 'dtlEvento.php?id="+objCal[i].id+"',";
-			
+
 			var yyyyy=objCal[i].dataEv.substr(6, 4);
 			var mmm=objCal[i].dataEv.substr(3, 2);
 			var ddd=objCal[i].dataEv.substr(0, 2);
 			var curdayy=yyyyy+'-'+mmm+'-'+ddd;
-			
+
 			risultato+="start: '"+curdayy+"'";
-        	risultato+="}";
+      risultato+="}";
 			if(i!=objCal.length-1){
-				risultato+=",";}
-        	else{
-				risultato+="]});";}
+				risultato+=",";
+			}else{
+				risultato+="";
+			}
 	}
-      	risultato+="calendar.render();}calInit();";
+  risultato+="])}; calendar.render();}calInit();";
 	$("#cal script").html(risultato);
-	
+
 }
 
 function viewTipiCerca(data){
@@ -128,7 +129,7 @@ function viewTipiCerca(data){
 			return annulla;
 			}
 			else {
-			$("#item"+id).remove();	
+			$("#item"+id).remove();
 			}
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
@@ -148,7 +149,7 @@ function viewTipiCerca(data){
 
 $( function() {
     $( ".cerca #data" ).datepicker({
-       dateFormat: 'dd/mm/yy' 
+       dateFormat: 'dd/mm/yy'
    });
   } );
 		</script>

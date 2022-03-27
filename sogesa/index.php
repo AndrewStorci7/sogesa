@@ -18,7 +18,7 @@
             </div>
         </div>
         <div id="cal"><script></script></div>
-        <div id="scriptCalendar"></div>
+        <div id="script"></div>
         <div class="paginat">
         	<a href="javascript:void(0);" id="prevPager">&laquo;</a>
             <a href="javascript:void(0);" id="pagerItem">1</a>
