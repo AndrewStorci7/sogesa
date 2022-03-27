@@ -6,9 +6,7 @@
 	$idUtente = $_POST['id'];
 	//$idUtente="ugosugo";
 
-	$query = ' SELECT `idPartecipante`, `CF`, `Cognome`, `Nome`, `Via`, `Citta`, `DataNascita`, `Telefono`, `Email`, `PatenteLicenza`, `DocumentoRiconoscimento`, `Password`, `Autorizzazione`, `DomandaSegreta`, `RispostaSegreta`, `Privacy`, `LuogoNascita`, `patente`, `scadpat`, `licenza`, `scadlic`
-
-				from  partecipanti
+	$query = ' SELECT idPartecipante, CF, Cognome, Nome, Via, Citta, DataNascita, Telefono, Email, PatenteLicenza, DocumentoRiconoscimento, Password, Autorizzazione, DomandaSegreta, RispostaSegreta, Privacy, LuogoNascita, patente, scadpat, licenza, scadlic from  partecipanti
 				where partecipanti.idPartecipante="'.$idUtente.'"';
 
 	$result = mysqli_query($conn,$query);
