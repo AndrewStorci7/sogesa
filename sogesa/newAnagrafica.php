@@ -123,10 +123,7 @@ include('header.php');
                         <h4>Evento</h4>
                         <select id="codEv">
                         </select>
-
                         <input type="text" id="mesefa" value="1" style="width:50px; margin-left:20px; margin-right:5px;" /><span>mesi precedenti</span>
-
-
                 </div>
                 </fieldset>
                 </div>
