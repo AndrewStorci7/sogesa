@@ -64,17 +64,6 @@ function viewList(data){
 		x=x+'</table>';
 	}
 	$("#risultato").html(x);
-
-						var x='<table> <tr> <th>Titolo</th> <th>Data</th> <th>Tipo</th> <th>Descrizione</th> <th class="meteo">Meteo</th> <th colspan="3">Gestisci</th> </tr>';
-					for(var i=0;i<objChild.length;i++)
-					{
-						x= x+'<tr id='+objChild[i].id+'><td>'+objChild[i].titolo+'</td><td>'+objChild[i].dataEv+'</td><td>'+objChild[i].tipo+'</td><td>'+objChild[i].desc+'</td><td>'+objChild[i].meteo+'</td><td>'+'<a href="dtlEvento.php?id='+objChild[i].id+'"><img style="width:40px; height:auto" title="Visualizza" src="view.png"></a>'+'</td><td>'+'<a href="updEvento.php?id='+objChild[i].id+'"><img style="width:40px; height:auto" title="Modifica" src="edit.png"></a>'+'</td><td>'+'<a href="javascript:void(0);" onClick="javascript:clickFn('+objChild[i].id+');"><img style="width:40px; height:auto" title="Elimina" src="delete.png"></a>'+'</td></tr>';
-					}
-					x=x+'</table>';
-					}
-		$("#risultato").html(x);
-
-
 }
 
 function calendarView(data){
