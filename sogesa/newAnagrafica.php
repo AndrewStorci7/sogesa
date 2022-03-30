@@ -104,14 +104,15 @@ include('header.php');
 				giorno='0'+giorno;
 			}
 			$('#dataScarico').val(giorno+"/"+mese+"/"+year);
-			let i = 0;
 
+			/* MODIFICHE DI ANDREW drink*/
+			let i = 0;
 			function addTurni(){
 				i++;
 				var div = document.getElementById('turni');
 				div.innerHTML += '<div style="float: left !important;" class="fon-itemDtl" id="div' + i + '">' +
-															'<h4>Numero Turno</h4>' +
-															'<input class="fon-input" style="width:40px !important;" type="text" name="titolo" id="fon-nturno' + i + '">' +
+															'<h4>Turno numero: ' + i + '</h4>' +
+															//'<input class="fon-input" style="width:40px !important;" type="text" name="titolo" id="fon-nturno' + i + '">' +
 															'<span>€ turno</span>' +
 															'<input class="fon-input" style="width:60px !important;" type="text" name="titolo" id="fon-prezzonturno' + i + '">' +
 															'<button onclick="deleteTurni(\'div' + i + '\')" style="border-radius:30px; width:20px; height:auto; background-color:red;">-</button>'
@@ -121,6 +122,7 @@ include('header.php');
 			function deleteTurni(id){
 				var divDel = document.getElementById(id);
 				divDel.style.display = "none";
+				i--;
 			}
 
 			/*$('#aggiungiTurno').click(function(){
@@ -133,6 +135,7 @@ include('header.php');
 															'<input class="fon-input" type="text" name="titolo" id="fon-prezzonturno' + i + '">' +
 														'</div>');
 			});*/
+			/* FINE MODIFICHE DI ANDREW drink */
 			</script>
 		</div>
 		<div class="fon-itemDtl">
