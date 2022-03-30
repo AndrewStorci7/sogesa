@@ -132,7 +132,7 @@ padding: 5px;
 	padding: 20px 0px;
 	text-align: center;
 	margin: 20px 0px;
-	
+
 }
 .meteo{
 padding-right:10%;
@@ -335,7 +335,7 @@ max-width: 100%;
 		clear:both;
 		float:right;
 		margin-left:5px;
-		
+
 	}
 	.modifica2 input{
 		width:50px;
@@ -660,7 +660,7 @@ body .btnSmall a{
 
 .pelucchi3{
 	width:100%;
-} 
+}
 .pelucchi{
 	float:left;
 	}
@@ -678,7 +678,7 @@ body .btnSmall a{
 
 
 
-.listaanagraficamoruzzi{   
+.listaanagraficamoruzzi{
 	margin:20px 0px;
 	border-style:solid;
 	border:0;
@@ -724,7 +724,7 @@ clear:both;
 }
 
 
-	
+
 
 .titoloanagraficamoruzzi{
 	background-color: #ececec;
@@ -770,33 +770,33 @@ border: 1px solid #000;
 
 
 .fon-lista{
-	
+
 margin:20px 0px;
-	
+
 border-style:solid;
-	
+
 border:0;
-	
+
 width:50%;
-	
+
 err:auto;
-	
+
 display:inline-block;
 
 }
 
-.fon-listaanagrafica{   
-	
+.fon-listaanagrafica{
+
 margin-top:10px;
-	
+
 border-style:solid;
-	
+
 border:0;
-	
+
 width:100%;
-	
+
 err:auto;
-	
+
 display:inline-block;
 
 }
@@ -804,37 +804,37 @@ display:inline-block;
 .fon-inputdesc{
 
 width:460px;
-	
+
 err:216px;
-	
+
 border-radius:5px;
-	
+
 border-color:black;
-	
+
 border-width:1px;
-	
+
 padding: 5px;
-	
+
 margin: 20px 0px 20px 15px;
-	
+
 float:right;
 
 }
 
 .fon-modifica .fon-fieldset{
-	
+
 border:1px solid #000;
-	
+
 color:black;
 
 }
 
 .fon-modifica .fon-fieldset legend{
-	
+
 text-align:center;
-	
+
 font-size:28px;
-	
+
 font-weight:bold;
 
 }
@@ -877,23 +877,23 @@ padding: 5px;
 }
 
 .fon-descrizione{
-	
+
 width:30%;
-	
+
 err:20%;
 
 }
 
 .fon-desc_evento{
-	
+
 padding-top:15px;
 
 }
 
 .fon-lista table{
-	
+
 width:100%;
-	
+
 background-color:#ececec;
 
 margin:0 auto;
@@ -902,37 +902,37 @@ margin:0 auto;
 
 
 .fon-listaanagrafica table{
-	
+
 width:100%;
-	
+
 background-color:#ececec;
-	
+
 margin:0 auto;
 
 }
 
 .fon-lista table, th, td {
-  
+
 border: 1px solid black;
-  
+
 border-collapse: collapse;
-  
+
 padding: 15px;
 }
 
 
 .fon-listaanagrafica table, th, td {
-  
+
 border: 1px solid black;
-  
+
 border-collapse: collapse;
-  
+
 padding: 15px;
 
 }
 
 .fon-lista table, th{
-	
+
 text-align:left;
 
 }
@@ -945,25 +945,25 @@ text-align:left;
 }
 
 .fon-paginat{
-	
+
 width:100%;
-	
+
 err:auto;
-	
+
 border-style:solid;
-	
+
 border:0;
-	
+
 display:inline-block;
-	
+
 background-color:#ececec;
-	
+
 padding: 20px 0px;
-	
+
 text-align: center;
-	
+
 margin: 20px 0px;
-	
+
 
 }
 
@@ -974,31 +974,31 @@ padding-right:10%;
 }
 
 .fon-paginat a {
- 
+
 margin: 0;
-  
+
 color:black;
-  
+
 padding:8px 16px;
-  
+
 text-decoration:none;
-  
+
 text-align:center;
 
 }
 
 .fon-calendario{
-	
+
 margin:20px 0px;
-	
+
 border-style:solid;
-	
+
 border:0;
-	
+
 width:43%;
-	
+
 display:inline-block;
-	
+
 float:right;
 
 }
@@ -1010,17 +1010,17 @@ background-color:#ececec;
 }
 
 .fon-modifica{
-	
+
 width:100%;
-	
+
 background-color:#ececec;
-	
+
 border:1px solid black;
 
 }
 
 .fon-modifica1{
-	
+
 width:auto;
 
 float:left;
@@ -1028,29 +1028,29 @@ float:left;
 }
 
 .fon-modifica1testo{
-	
+
 width:250px;
-	
+
 err:220px;
-	
+
 float:left;
 
 }
 
 .fon-modifica1campi{
-	
+
 width:250px;
-	
+
 err:220px;
-	
+
 float:left;
 
 }
 
 .fon-modifica2{
-	
+
 width:auto;
-	
+
 float:left;
 
 }
@@ -1076,56 +1076,56 @@ margin-left:15px;
 
 }
 .fon-label{
-	
+
 color: #333;
 display: inline-block;
 font-size: 18px;
-	
+
 font-weight:bold;
-    
+
 margin: 20px 0px 20px 15px;
-   
+
 border-top: 1px solid #bbb;
-   
+
 border-bottom: 1px solid #bbb;
 padding: 5px;
 
 }
 
 .fon-labcontent{
-	
+
 font-size:18px;
-	
+
 margin-left:10px;
 
 }
 
-@media screen and (max-width: 1366px) 
+@media screen and (max-width: 1366px)
 {
-  
+
 .fon-lista{
-	  
+
 display:block;
-	 
+
 width:100%;
-  
+
 }
-   
+
 .fon-calendario{
 display:block;
-	  
+
 width:100%;
-	  
+
 float:left;
-  
+
 }
-  
+
 .fon-inputdesc{
-	  
+
 width:auto;
-	 
+
 err:auto;
-  
+
 }
 }
 @media screen and (max-width: 1100px) {
@@ -1223,7 +1223,7 @@ max-width: 100%;
 		clear:both;
 		float:right;
 		margin-left:5px;
-		
+
 	}
 	.fon-modifica2 input{
 		width:50px;
@@ -1475,6 +1475,7 @@ body .fon-btnSmall a{
 	width:50%;
 	padding:10px 0;
 	float:left;
+	/*display: block;*/
 }
 .fon-itemDtlBig{
 	width:100%;
@@ -1540,7 +1541,7 @@ body .fon-btnSmall a{
 }
 .fon-rowDtl .fon-bottone{margin-right:0%; }
 }
-       	
+
 .fon-nuovomezzo{
 color:white;
 }
@@ -1952,12 +1953,12 @@ margin-bottom:30px;}
 .modifica{margin-top:30px;}
 @media screen and (max-width: 991px) {
 	.modifica1,.modifica2{width:95%;}
-	
+
 }
 @media screen and (max-width: 991px) {
 .fon-left{ width:95%;}
 	.fon-right{ width:95%;}
-	
+
 }
 .menu{margin-bottom:20px;}
 .logo{margin-bottom:15px;}

@@ -1,10 +1,10 @@
 		<script>
-		
+
 		var idSel=0;
-		
-		
-		
-		
+
+
+
+
 		$('.fon-change').bind('keyup', function(event){
 			var nomeTrovato;
 			var cognomeTrovato;
@@ -14,19 +14,19 @@
 			var cf = '';
 			jQuery.post('viewAnagrafica.php',  {nome: nome,cognome: cognome,cf: cf,pager: 1}, viewList, 'json');
 		});
-		jQuery("#mesefa").bind('keyup', function(event){ 
+		jQuery("#mesefa").bind('keyup', function(event){
 			var mesefa = $("#mesefa").val();
 		jQuery.post('listEventi.php',  {mesefa:mesefa}, viewEventi, 'json');
 		});
 
-		
-	
+
+
 	function selPeople(id){
 		idSel=id;
 		$.post("anagraficaDtl.php",  {id:id}, viewEvUpd, "json");
 			$.post('mezzi.php',{id:id }, listMezziFn, 'json');
 	}
-	
+
 function listMezziFn(data){
 					var cntFile = data;
 					var obj = JSON.parse(cntFile);
@@ -39,10 +39,10 @@ function listMezziFn(data){
 					}
 					x=x+'</table>';
 		$("#listaMezzi").html(x);
-					
+
 }
-	
-	
+
+
 		function viewEvUpd(data){
 			var cntFile = data;
 			var obj = JSON.parse(cntFile);
@@ -109,6 +109,15 @@ function listMezziFn(data){
 			 cfg=$("#fon-cfg").val();
 			 prezzo=$("#fon-prezzo").val();
 			 codEv=$("#codEv").val();
+			 var box = $('#fon-box').val();
+			 var box = $('#fon-giorni').val();
+			 var box = $('#fon-prezzoxgg').val();
+			 var turni = $('#fon-fieldset');
+			 var arrayTurni = new Array();
+			 for(let i = 0; i < turni.length; i++){
+				 var idCss = '#div' + i;
+				 arrayTurni[i] = $(idCss).val();
+			 }
 
 				if(nome.length<1)
 				{
@@ -132,8 +141,8 @@ function listMezziFn(data){
 				}
 				else{
 					if(idSel==0){
-						
-						
+
+
 				$("#modello").removeClass('redBorder');
 
 			var modello=$("#modello").val();
@@ -148,35 +157,35 @@ function listMezziFn(data){
 					$("#modello").addClass('redBorder');
 					alert ("Devi completare il campo Modello");
 				}else{
-					
-						
-						
-						
-						
-						
+
+
+
+
+
+
 						$.post("anagraficaIns.php",  {nome:nome, cognome: cognome, cf:cf, luogo:luogo, nascita:nascita, via:via, citta:citta, email:email, telefono:telefono, patente:patente , scadpat:scadpat, licenza:licenza , scadlic:scadlic, modello:modello, disciplina:disciplina, cilindrata:cilindrata, marca:marca, massa:massa}, insFn, "json");
 				}
 					}else{
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
+
+
+
+
+
+
+
+
+
+
+
+
 				var modello='';
 			var disciplina='';
 			var cilindrata='';
 			var marca='';
 			var massa='';
-					
-							
-					
+
+
+
             if(radioValue==0){
 				$("#modello").removeClass('redBorder');
 
@@ -194,44 +203,44 @@ function listMezziFn(data){
 						$.post("anagraficaUpd.php",  {nome:nome, cognome: cognome, cf:cf, luogo:luogo, nascita:nascita, via:via, citta:citta, email:email, telefono:telefono , id:idSel, patente:patente , scadpat:scadpat, licenza:licenza , scadlic:scadlic , radioValue:radioValue, modello:modello, disciplina:disciplina, cilindrata:cilindrata, marca:marca, massa:massa}, updFn, "json");
 				}
 			}else{
-						
+
 						$.post("anagraficaUpd.php",  {nome:nome, cognome: cognome, cf:cf, luogo:luogo, nascita:nascita, via:via, citta:citta, email:email, telefono:telefono , id:idSel, patente:patente , scadpat:scadpat, licenza:licenza , scadlic:scadlic , radioValue:radioValue, modello:modello, disciplina:disciplina, cilindrata:cilindrata, marca:marca, massa:massa}, updFn, "json");
-						
-						
+
+
 			}
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 					}
-			
-			
-			
+
+
+
 				}
-			
+
 		});
 		var radioValue =0;
 	function ctrlRadio(){
-            
+
 			radioValue = $("input[name='radioMezzo']:checked").val();
-			
+
         }
-		
+
 		function insScaricoFn(data){
 			if(data>0){
-				window.open('pdfScarico.php?id='+data,'_blank');	
+				window.open('pdfScarico.php?id='+data,'_blank');
 				window.location="anagrafica.php";
 			}else{
 				alert('Si è verificato un errore. Si prega di riprovare.');
@@ -239,7 +248,7 @@ function listMezziFn(data){
 		}
 		function insScarico2Fn(data){
 			if(data>0){
-				window.open('pdfScarico.php?id='+data,'_blank');	
+				window.open('pdfScarico.php?id='+data,'_blank');
 				window.location="anagrafica.php";
 			}else{
 				alert('Si è verificato un errore. Si prega di riprovare.');
@@ -276,7 +285,7 @@ function viewEventi(data){
 	function viewList(data){
 
 					var cntFile = data;
-					
+
 					if(cntFile!=''){
 					var obj = JSON.parse(cntFile);
 					var objChild=obj.anagrafica;
@@ -291,20 +300,20 @@ function viewEventi(data){
 					}
 		$("#fon-right").html(x);
 					}
-					
+
 
 	}
-	
+
 
 $( function() {
     $( "#nascita" ).datepicker({
-       dateFormat: 'dd/mm/yy' 
+       dateFormat: 'dd/mm/yy'
    });
   } );
 $( function() {
     $( "#dataScarico" ).datepicker({
-       dateFormat: 'dd/mm/yy' 
+       dateFormat: 'dd/mm/yy'
    });
   } );
-		
+
 		</script>
