@@ -60,19 +60,17 @@ if(isset($_POST['prezzoxgg'])){
 	$prezzoxgg = "";
 }
 
-$turniArray = array();
-for($i = 0; $i < 1000; $i++){
+/* MODIFICHE DI ANDREW drink */
+/*$turniArray = array();
+for($i = 0; $i < 100; $i++){
 	$prezzo = isset($_POST['pturno' . $i]) ?? $_POST['pturno' . $i] :: $prezzo = "";
-	$turno = isset($_POST['nturno' . $i]) ?? $_POST['nturno' . $i] :: $turno = "";
+	//$turno = isset($_POST['nturno' . $i]) ?? $_POST['nturno' . $i] :: $turno = "";
 	if($prezzo == "" || $turno == ""){
 		echo $i;
 	} else {
-		$turniArray += array(
-			'n_turno' => $turno,
-			'p_turno' => $prezzo
-		);
+		$turniArray[$i] = $prezzo;
 	}
-}
+}*/
 
 $prezzo =  htmlentities($prezzo, ENT_QUOTES, "UTF-8");
 $prezzo = my_htmlentities($prezzo);
@@ -92,6 +90,10 @@ $documento =  htmlentities($documento, ENT_QUOTES, "UTF-8");
 $documento = my_htmlentities($documento);
 
 
+
+/* FINE MODIFICHE DI ANDREW drink */
+
+
 if($radioValue==0){
 
 	$yy="SELECT * FROM mezzi WHERE idPartecipante=".$id." ORDER BY IdM DESC";
@@ -107,12 +109,7 @@ if($radioValue==0){
 	}else{
 		$radioValue=0;
 	}
-
-
-
-
 }
-
 
 $query = "INSERT INTO scarichi (patente,documento,DataScarico,cfg,prezzo,codPar,codEv,idMezzo)
 VALUES ('".$patente."','".$documento."','".$dataScarico."','".$cfg."','".$prezzo."','".$id."','".$codEv."','".$radioValue."')";

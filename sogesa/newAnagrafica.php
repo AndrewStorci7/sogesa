@@ -104,45 +104,6 @@ include('header.php');
 				giorno='0'+giorno;
 			}
 			$('#dataScarico').val(giorno+"/"+mese+"/"+year);
-
-			/* MODIFICHE DI ANDREW drink*/
-			let i = 0;
-			let x = 0;
-			function addTurni(){
-				i++;
-				if(i < 0)
-					i = 1;
-				var div = document.getElementById('turni');
-				div.innerHTML += '<div style="float: left !important;" class="fon-itemDtl" id="div' + x + '">' +
-															'<h4>Turno numero: </h4>' +
-															'<input class="fon-input" style="width:40px !important;" type="text" value="' + i + '" name="nturno' + i + '" id="fon-nturno' + i + '" readonly>' +
-															'<span>€ turno</span>' +
-															'<input class="fon-input" style="width:60px !important;" type="text" name="pturno' + x + '" id="fon-prezzonturno' + x + '">' +
-															'<button onclick="deleteTurni(\'div' + x + '\')" style="border-radius:30px; width:20px; height:auto; background-color:red;">-</button>'
-														'</div>';
-				x++;
-			}
-
-			function deleteTurni(id){
-				var divDel = document.getElementById(id);
-				divDel.style.display = "none";
-				if(i < 0)
-					i = 1;
-				else
-					i--;
-			}
-
-			/*$('#aggiungiTurno').click(function(){
-				i++;
-				console.log(i);
-				$('#turni').append('<div class="font-itemDtl">' +
-															'<h4>Numero Turno</h4>' +
-															'<input class="fon-input" type="text" name="titolo" id="fon-nturno' + i + '">' +
-															'<span>€ turno</span>' +
-															'<input class="fon-input" type="text" name="titolo" id="fon-prezzonturno' + i + '">' +
-														'</div>');
-			});*/
-			/* FINE MODIFICHE DI ANDREW drink */
 			</script>
 		</div>
 		<div class="fon-itemDtl">
@@ -159,6 +120,12 @@ include('header.php');
 			</select>
 			<input type="text" id="mesefa" value="1" style="width:50px; margin-left:20px; margin-right:5px;" /><span>mesi precedenti</span>
 		</div>
+	</fieldset>
+</div>
+
+<div class="fon-lista fon-listaFull fon-modifica">
+	<fieldset class="fon-fieldset">
+		<legend>Informazioni aggiuntive</legend>
 		<div class="fon-itemDtl">
 			<h4>Numero del box</h4>
 			<input class="fon-input" type="text" name="nbox" id="fon-box">
@@ -177,6 +144,10 @@ include('header.php');
 		</div>
 	</fieldset>
 </div>
+<script type="text/javascript">
+
+
+</script>
 </div>
 
 <div class="nuovomezzo">

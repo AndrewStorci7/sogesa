@@ -2,6 +2,60 @@
 
 var idSel=0;
 
+/* MODIFICHE DI ANDREW drink*/
+let i = 0;
+function addTurni(){
+	i++;
+	if(i < 1)
+		i = 1;
+	var div = document.getElementById('turni');
+	$('.deleteTurni').remove();
+	div.innerHTML += '<div style="float: left !important;" class="fon-itemDtl" id="div' + i + '">' +
+												'<h4>Turno numero: </h4>' +
+												'<input class="fon-input" style="width:40px !important;" type="text" value="' + i + '" name="nturno' + i + '" id="fon-nturno' + i + '" readonly>' +
+												'<span>€ turno</span>' +
+												'<input class="fon-input" style="width:60px !important;" type="text" name="pturno' + i + '" id="fon-prezzonturno' + i + '">' +
+												'<button onclick="deleteTurni(\'div' + i + '\')" class="deleteTurni" style="border-radius:30px; width:20px; height:auto; background-color:red;">-</button>'
+											'</div>';
+}
+
+function deleteTurni(id){
+	var divDel = document.getElementById(id);
+	divDel.remove();
+	if(i < 1){
+		i = 1;
+	}else{
+		i--;
+		var div = document.getElementById('div' + i);
+		div.innerHTML += '<button onclick="deleteTurni(\'div' + i + '\')" class="deleteTurni" style="border-radius:30px; width:20px; height:auto; background-color:red;">-</button>';
+	}
+
+
+}
+
+/*$('#conferma').click(function(){
+	var box = $('#fon-box').val();
+	var giorni = $('#fon-giorni').val();
+	var pxgg = $('#fon-prezzoxgg').val();
+	var arrayTurni = new Array();
+	for(let y = 0; y < x; y++){
+		var idCss = '#div' + y;
+		arrayTurni[y] = $(idCss).val();
+		console.log(arrayTurni[y]);
+	}
+});*/
+
+/*$('#aggiungiTurno').click(function(){
+	i++;
+	console.log(i);
+	$('#turni').append('<div class="font-itemDtl">' +
+												'<h4>Numero Turno</h4>' +
+												'<input class="fon-input" type="text" name="titolo" id="fon-nturno' + i + '">' +
+												'<span>€ turno</span>' +
+												'<input class="fon-input" type="text" name="titolo" id="fon-prezzonturno' + i + '">' +
+											'</div>');
+});*/
+/* FINE MODIFICHE DI ANDREW drink */
 
 
 
@@ -68,6 +122,11 @@ var dataScarico='';
 var cfg='';
 var prezzo='';
 var codEv=0;
+var box = 0;
+var giorni = 0;
+var prezzo = 0;
+var arrayTurni = new Array();
+var arrayPrezzi = new Array();
 
 $("#conferma").click(function(){
 	$("#nome").removeClass('redBorder');
@@ -111,15 +170,18 @@ $("#conferma").click(function(){
 	codEv=$("#codEv").val();
 
 	/* MODIFICHE DI ANDREW drink */
-	var box = $('#fon-box').val();
-	var giorni = $('#fon-giorni').val();
-	var pxgg = $('#fon-prezzoxgg').val();
-	var turni = $('#fon-fieldset');
-	var arrayTurni = new Array();
-	for(let i = 0; i < turni.length; i++){
-		var idCss = '#div' + i;
-		arrayTurni[i] = $(idCss).val();
-		console.log(arrayTurni[i]);
+	box = $('#fon-box').val();
+	box = $.trim(box);
+	giorni = $('#fon-giorni').val();
+	giorni = $.trim(giorni);
+	pxgg = $('#fon-prezzoxgg').val();
+	pxgg = $.trim(pxgg);
+	for(let y = 1; y <= i; y++){
+		var idCss = '#fon-nturno' + y;
+		var idCssCosti = '#fon-prezzonturno' + y;
+		arrayPrezzi[y-1] = $(idCssCosti).val();
+		arrayTurni[y-1] = $(idCss).val();
+		console.log(arrayTurni[y-1]);
 	}
 	/* FINE MODIFICHE DI ANDREW drink */
 
@@ -146,7 +208,6 @@ $("#conferma").click(function(){
 	else{
 		if(idSel==0){
 
-
 			$("#modello").removeClass('redBorder');
 
 			var modello=$("#modello").val();
@@ -161,26 +222,9 @@ $("#conferma").click(function(){
 				$("#modello").addClass('redBorder');
 				alert ("Devi completare il campo Modello");
 			}else{
-
-
-
-
-
-
 				$.post("anagraficaIns.php",  {nome:nome, cognome: cognome, cf:cf, luogo:luogo, nascita:nascita, via:via, citta:citta, email:email, telefono:telefono, patente:patente , scadpat:scadpat, licenza:licenza , scadlic:scadlic, modello:modello, disciplina:disciplina, cilindrata:cilindrata, marca:marca, massa:massa}, insFn, "json");
 			}
 		}else{
-
-
-
-
-
-
-
-
-
-
-
 
 			var modello='';
 			var disciplina='';
@@ -207,33 +251,10 @@ $("#conferma").click(function(){
 					$.post("anagraficaUpd.php",  {nome:nome, cognome: cognome, cf:cf, luogo:luogo, nascita:nascita, via:via, citta:citta, email:email, telefono:telefono , id:idSel, patente:patente , scadpat:scadpat, licenza:licenza , scadlic:scadlic , radioValue:radioValue, modello:modello, disciplina:disciplina, cilindrata:cilindrata, marca:marca, massa:massa}, updFn, "json");
 				}
 			}else{
-
 				$.post("anagraficaUpd.php",  {nome:nome, cognome: cognome, cf:cf, luogo:luogo, nascita:nascita, via:via, citta:citta, email:email, telefono:telefono , id:idSel, patente:patente , scadpat:scadpat, licenza:licenza , scadlic:scadlic , radioValue:radioValue, modello:modello, disciplina:disciplina, cilindrata:cilindrata, marca:marca, massa:massa}, updFn, "json");
-
-
 			}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		}
-
-
-
 	}
-
 });
 var radioValue =0;
 function ctrlRadio(){
@@ -260,14 +281,14 @@ function insScarico2Fn(data){
 }
 function insFn(data){
 	if(data>0){
-		$.post("scaricoIns.php",  {patente:fonpatente, documento: documento, dataScarico:dataScarico, cfg:cfg, prezzo:prezzo , id:data,codEv:codEv,radioValue:radioValue}, insScarico2Fn, "json");
+		$.post("scaricoIns.php",  {patente:fonpatente, documento: documento, dataScarico:dataScarico, cfg:cfg, prezzo:prezzo , id:data,codEv:codEv,radioValue:radioValue, nbox:box, giorni:giorni, prezzoxgg:pxgg, arrayTurni:arrayTurni, arrayPrezzi:arrayPrezzi}, insScarico2Fn, "json");
 	}else{
 		alert('Si è verificato un errore. Si prega di riprovare.');
 	}
 }
 function updFn(data){
 	if(data==1){
-		$.post("scaricoIns.php",  {patente:fonpatente, documento: documento, dataScarico:dataScarico, cfg:cfg, prezzo:prezzo , id:idSel,codEv:codEv,radioValue:radioValue}, insScaricoFn, "json");
+		$.post("scaricoIns.php",  {patente:fonpatente, documento: documento, dataScarico:dataScarico, cfg:cfg, prezzo:prezzo , id:idSel,codEv:codEv,radioValue:radioValue, nbox:box, giorni:giorni, prezzoxgg:pxgg, arrayTurni:arrayTurni, arrayPrezzi:arrayPrezzi}, insScaricoFn, "json");
 	}else{
 		alert('Si è verificato un errore. Si prega di riprovare.');
 	}
@@ -295,17 +316,11 @@ function viewList(data){
 		var objChild=obj.anagrafica;
 
 		var x='';
-		for(var i=0;i<objChild.length;i++)
-		{
-
-
-
+		for(var i=0;i<objChild.length;i++){
 			x= x+'<p><a href="javascript:void(0);" onClick="javascript:selPeople('+objChild[i].id+')">'+objChild[i].nome+' '+objChild[i].cognome+'</a></p>';
 		}
 		$("#fon-right").html(x);
 	}
-
-
 }
 
 
@@ -313,11 +328,11 @@ $( function() {
 	$( "#nascita" ).datepicker({
 		dateFormat: 'dd/mm/yy'
 	});
-} );
+});
 $( function() {
 	$( "#dataScarico" ).datepicker({
 		dateFormat: 'dd/mm/yy'
 	});
-} );
+});
 
 </script>
