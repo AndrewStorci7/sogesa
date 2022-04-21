@@ -80,11 +80,11 @@ include('header.php');
 		<legend>Nuovo Scarico</legend>
 		<div class="fon-itemDtl" style="display:none;">
 			<h4>Patente</h4>
-			<input class="fon-input" type="text" name="titolo" id="fon-patente">
+			<input class="fon-input" type="text" name="patente" id="fon-patente">
 		</div>
 		<div class="fon-itemDtl" style="display:none;">
 			<h4>Documento di riconoscimento</h4>
-			<input class="fon-input" name="titolo" type="text" id="fon-documento">
+			<input class="fon-input" name="documento" type="text" id="fon-documento">
 		</div>
 		<div class="fon-itemDtl">
 			<h4>Data Scarico</h4>
@@ -104,60 +104,37 @@ include('header.php');
 				giorno='0'+giorno;
 			}
 			$('#dataScarico').val(giorno+"/"+mese+"/"+year);
-			let i = 0;
-
-			function addTurni(){
-				i++;
-				var div = document.getElementById('turni');
-				div.innerHTML += '<div style="float: left !important;" class="fon-itemDtl" id="div' + i + '">' +
-															'<h4>Numero Turno</h4>' +
-															'<input class="fon-input" style="width:40px !important;" type="text" name="titolo" id="fon-nturno' + i + '">' +
-															'<span>€ turno</span>' +
-															'<input class="fon-input" style="width:60px !important;" type="text" name="titolo" id="fon-prezzonturno' + i + '">' +
-															'<button onclick="deleteTurni(\'div' + i + '\')" style="border-radius:30px; width:20px; height:auto; background-color:red;">-</button>'
-														'</div>';
-			}
-
-			function deleteTurni(id){
-				var divDel = document.getElementById(id);
-				divDel.style.display = "none";
-			}
-
-			/*$('#aggiungiTurno').click(function(){
-				i++;
-				console.log(i);
-				$('#turni').append('<div class="font-itemDtl">' +
-															'<h4>Numero Turno</h4>' +
-															'<input class="fon-input" type="text" name="titolo" id="fon-nturno' + i + '">' +
-															'<span>€ turno</span>' +
-															'<input class="fon-input" type="text" name="titolo" id="fon-prezzonturno' + i + '">' +
-														'</div>');
-			});*/
 			</script>
 		</div>
 		<div class="fon-itemDtl">
 			<h4>Codice fiscale genitore</h4>
-			<input class="fon-input" type="text" name="titolo" id="fon-cfg">
+			<input class="fon-input" type="text" name="cfg" id="fon-cfg">
 		</div>
 		<div class="fon-itemDtl">
 			<h4>Prezzo</h4>
-			<input class="fon-input" type="text" id="fon-prezzo">
+			<input class="fon-input" type="text" name="prezzo" id="fon-prezzo">
 		</div>
 		<div class="fon-itemDtl">
 			<h4>Evento</h4>
-			<select id="codEv">
+			<select name="codEv" id="codEv">
 			</select>
 			<input type="text" id="mesefa" value="1" style="width:50px; margin-left:20px; margin-right:5px;" /><span>mesi precedenti</span>
 		</div>
+	</fieldset>
+</div>
+
+<div class="fon-lista fon-listaFull fon-modifica">
+	<fieldset class="fon-fieldset">
+		<legend>Informazioni aggiuntive</legend>
 		<div class="fon-itemDtl">
 			<h4>Numero del box</h4>
-			<input class="fon-input" type="text" id="fon-box">
+			<input class="fon-input" type="text" name="nbox" id="fon-box">
 		</div>
 		<div class="fon-itemDtl">
 			<h4>gg</h4>
-			<input class="fon-input" type="text" id="fon-giorni">
+			<input class="fon-input" type="text" name="giorni" id="fon-giorni">
 			<span>€ per gg</span>
-			<input class="fon-input" type="text" id="fon-prezzoxgg" style="width:70px;">
+			<input class="fon-input" type="text" name="prezzoxgg" id="fon-prezzoxgg" style="width:70px;">
 		</div>
 		<div class="fon-bottoneConf" id="aggiungiTurno">
 			<a style="background-color:#408A2F; color:white" href="javascript:void(0);" onclick="addTurni()" class="confermaModifiche" >Aggiungi turno</a>
@@ -167,6 +144,10 @@ include('header.php');
 		</div>
 	</fieldset>
 </div>
+<script type="text/javascript">
+
+
+</script>
 </div>
 
 <div class="nuovomezzo">
