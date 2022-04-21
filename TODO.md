@@ -12,7 +12,7 @@ Modificare la query di inserimento scarico a riga 106/1'7 aggiungendo l'id del B
 
 # AGGIORNAMENTO 21/04/2022 ore 23:20
 Nel file __ScaricoIns.php__ da riga 98 a riga 121 sono presenti le modifiche fatte.<br>
-__$insertBox__ contiene la query di inserimento dei dati di scarico_box.<-br>
+__$insertBox__ contiene la query di inserimento dei dati di scarico_box.<br>
 __$selectIdBox__ contiene la query per la selezione dell'id del box che poi andrò ad utilizzare nella query di inserimento degli N turni.<br>
 Da riga 110 a riga 116 ho fatto un ciclo for per scorrere il contenuto dell'array, e ad ogni posizione vado a prendere il corrispettivo dato e di conseguenza faccio una query per ogni $i.<br>
 Infine dentro __$query__ faccio la query di inserimento per scarichi (già esistente, quello che ho aggiunto e l'id del box).
