@@ -96,17 +96,29 @@ if($radioValue==0){
 }
 
 /* MODIFICHE DI ANDREW drink */
-$selectIdBox = "SELECT id FROM scarico_box WHERE n_box = " . $nbox;
+$insertBox = "INSERT INTO scarico_box (id_partecipante, n_box, giorni, prezzo)
+							VALUES(" . $id . ", " . $nbox . ", " . $giorni . ", " . $prezzoxgg . ")";
+$resultInsertBox = $conn->query($insertBox);
+
+$selectIdBox = "SELECT id FROM scarico_box JOIN partecipanti ON partecipanti.idPartecipante = scarico_box.id_partecipante WHERE id_partecipante = " . $id . " LIMIT 1";
 $selectResult = $conn->query($selectIdBox);
+$idBox = "";
 while($rowSelectIdBox = mysqli_fetch_assoc($selectResult)){
-	echo $rowSelectIdBox['id'];
+	$idBox = $rowSelectIdBox['id'];
 }
 
+for($i = 0; $i < count($turniArray); $i++){
+	if($turniArray[$i] !== ""){
+		$insertTurniBox = "INSERT INTO turni_box(id_box, n_turno, prezzo)
+											 VALUES('" . $idBox . "', '" . $i . "', '" . $turniArray[$i] . "');";
+		$resultInsertTurni = $conn->query($insertTurniBox);
+	}
+}
 
 $query = "INSERT INTO scarichi (patente,documento,DataScarico,cfg,prezzo,codPar,codEv,idMezzo,id_scaricoBox)
-VALUES ('".$patente."','".$documento."','".$dataScarico."','".$cfg."','".$prezzo."','".$id."','".$codEv."','".$radioValue."', )";
+VALUES ('".$patente."','".$documento."','".$dataScarico."','".$cfg."','".$prezzo."','".$id."','".$codEv."','".$radioValue."','".$idBox."')";
 
-/* MODIFICHE DI ANDREW drink */
+/* FINE MODIFICHE DI ANDREW drink */
 
 
 $result = mysqli_query($conn,$query);

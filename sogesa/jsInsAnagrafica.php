@@ -263,18 +263,16 @@ function ctrlRadio(){
 
 function insScaricoFn(data){
 	if(data>0){
-		//window.open('pdfScarico.php?id='+data,'_blank');
-		//window.location="anagrafica.php";
-		window.Location = "scaricoIns.php";
+		window.open('pdfScarico.php?id='+data,'_blank');
+		window.location="anagrafica.php";
 	}else{
 		alert('Si è verificato un errore. Si prega di riprovare.');
 	}
 }
 function insScarico2Fn(data){
 	if(data>0){
-		//window.open('pdfScarico.php?id='+data,'_blank');
-		//window.location="anagrafica.php";
-		window.Location = "scaricoIns.php";
+		window.open('pdfScarico.php?id='+data,'_blank');
+		window.location="anagrafica.php";
 	}else{
 		alert('Si è verificato un errore. Si prega di riprovare.');
 	}
