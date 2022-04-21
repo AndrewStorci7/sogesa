@@ -29,8 +29,6 @@ function deleteTurni(id){
 		var div = document.getElementById('div' + i);
 		div.innerHTML += '<button onclick="deleteTurni(\'div' + i + '\')" class="deleteTurni" style="border-radius:30px; width:20px; height:auto; background-color:red;">-</button>';
 	}
-
-
 }
 
 /*$('#conferma').click(function(){
@@ -180,7 +178,7 @@ $("#conferma").click(function(){
 		//var idCss = '#fon-nturno' + y;
 		var idCssCosti = '#fon-prezzonturno' + y;
 		//arrayPrezzi[y-1] = $(idCssCosti).val();
-		arrayTurni[y] = $(idCss).val();
+		arrayTurni[y] = $(idCssCosti).val();
 		//console.log(arrayTurni[y-1]);
 	}
 	/* FINE MODIFICHE DI ANDREW drink */
@@ -265,16 +263,18 @@ function ctrlRadio(){
 
 function insScaricoFn(data){
 	if(data>0){
-		window.open('pdfScarico.php?id='+data,'_blank');
-		window.location="anagrafica.php";
+		//window.open('pdfScarico.php?id='+data,'_blank');
+		//window.location="anagrafica.php";
+		window.Location = "scaricoIns.php";
 	}else{
 		alert('Si è verificato un errore. Si prega di riprovare.');
 	}
 }
 function insScarico2Fn(data){
 	if(data>0){
-		window.open('pdfScarico.php?id='+data,'_blank');
-		window.location="anagrafica.php";
+		//window.open('pdfScarico.php?id='+data,'_blank');
+		//window.location="anagrafica.php";
+		window.Location = "scaricoIns.php";
 	}else{
 		alert('Si è verificato un errore. Si prega di riprovare.');
 	}

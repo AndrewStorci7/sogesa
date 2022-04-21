@@ -48,12 +48,13 @@ if(isset($_POST['codEv'])){
 $nbox = isset($_POST['nbox']) ? $_POST['nbox'] : "";
 $giorni = isset($_POST['giorni']) ? $_POST['giorni'] : "";
 $prezzoxgg = isset($_POST['prezzoxgg']) ? $_POST['prezzoxgg'] : "";
-$prezzo = isset($_POST['arrayTurni']) ? $_POST['arrayTurni'] : $prezzo = "";
+$turni = isset($_POST['arrayTurni']) ? $_POST['arrayTurni'] : "";
 $turniArray = array();
-for($i = 0; $i < 100; $i++){
+for($i = 0; $i < count($turni); $i++){
 	//$turno = isset($_POST['nturno' . $i]) ?? $_POST['nturno' . $i] :: $turno = "";
-	if($prezzo !== ""){
-		$turniArray[$i] = $prezzo[$i];*
+	if($turni !== ""){
+		$turniArray[$i] = $turni[$i];
+		echo $turniArray[$i];
 	}
 }
 
@@ -63,8 +64,8 @@ $cfg =  htmlentities($cfg, ENT_QUOTES, "UTF-8");
 $cfg = my_htmlentities($cfg);
 $patente =  htmlentities($patente, ENT_QUOTES, "UTF-8");
 $patente = my_htmlentities($patente);
-$n_box = htmlentities($n_box, ENT_QUOTES. "UTF-8");
-$n_box = my_htmlentities($n_box);
+$nbox = htmlentities($nbox, ENT_QUOTES, "UTF-8");
+$nbox = my_htmlentities($nbox);
 $prezzoxgg = htmlentities($prezzoxgg, ENT_QUOTES, "UTF-8");
 $prezzoxgg = my_htmlentities($prezzoxgg);
 $giorni = htmlentities($giorni, ENT_QUOTES, "UTF-8");
@@ -94,8 +95,20 @@ if($radioValue==0){
 	}
 }
 
-$query = "INSERT INTO scarichi (patente,documento,DataScarico,cfg,prezzo,codPar,codEv,idMezzo)
-VALUES ('".$patente."','".$documento."','".$dataScarico."','".$cfg."','".$prezzo."','".$id."','".$codEv."','".$radioValue."')";
+/* MODIFICHE DI ANDREW drink */
+$selectIdBox = "SELECT id FROM scarico_box WHERE n_box = " . $nbox;
+$selectResult = $conn->query($selectIdBox);
+while($rowSelectIdBox = mysqli_fetch_assoc($selectResult)){
+	echo $rowSelectIdBox['id'];
+}
+
+
+$query = "INSERT INTO scarichi (patente,documento,DataScarico,cfg,prezzo,codPar,codEv,idMezzo,id_scaricoBox)
+VALUES ('".$patente."','".$documento."','".$dataScarico."','".$cfg."','".$prezzo."','".$id."','".$codEv."','".$radioValue."', )";
+
+/* MODIFICHE DI ANDREW drink */
+
+
 $result = mysqli_query($conn,$query);
 if($result){
 
