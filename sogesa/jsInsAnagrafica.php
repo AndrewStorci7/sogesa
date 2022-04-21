@@ -126,7 +126,7 @@ var box = 0;
 var giorni = 0;
 var prezzo = 0;
 var arrayTurni = new Array();
-var arrayPrezzi = new Array();
+//var arrayPrezzi = new Array();
 
 $("#conferma").click(function(){
 	$("#nome").removeClass('redBorder');
@@ -177,11 +177,11 @@ $("#conferma").click(function(){
 	pxgg = $('#fon-prezzoxgg').val();
 	pxgg = $.trim(pxgg);
 	for(let y = 1; y <= i; y++){
-		var idCss = '#fon-nturno' + y;
+		//var idCss = '#fon-nturno' + y;
 		var idCssCosti = '#fon-prezzonturno' + y;
-		arrayPrezzi[y-1] = $(idCssCosti).val();
-		arrayTurni[y-1] = $(idCss).val();
-		console.log(arrayTurni[y-1]);
+		//arrayPrezzi[y-1] = $(idCssCosti).val();
+		arrayTurni[y] = $(idCss).val();
+		//console.log(arrayTurni[y-1]);
 	}
 	/* FINE MODIFICHE DI ANDREW drink */
 
@@ -281,14 +281,14 @@ function insScarico2Fn(data){
 }
 function insFn(data){
 	if(data>0){
-		$.post("scaricoIns.php",  {patente:fonpatente, documento: documento, dataScarico:dataScarico, cfg:cfg, prezzo:prezzo , id:data,codEv:codEv,radioValue:radioValue, nbox:box, giorni:giorni, prezzoxgg:pxgg, arrayTurni:arrayTurni, arrayPrezzi:arrayPrezzi}, insScarico2Fn, "json");
+		$.post("scaricoIns.php",  {patente:fonpatente, documento: documento, dataScarico:dataScarico, cfg:cfg, prezzo:prezzo , id:data,codEv:codEv,radioValue:radioValue, nbox:box, giorni:giorni, prezzoxgg:pxgg, arrayTurni:arrayTurni}, insScarico2Fn, "json");
 	}else{
 		alert('Si è verificato un errore. Si prega di riprovare.');
 	}
 }
 function updFn(data){
 	if(data==1){
-		$.post("scaricoIns.php",  {patente:fonpatente, documento: documento, dataScarico:dataScarico, cfg:cfg, prezzo:prezzo , id:idSel,codEv:codEv,radioValue:radioValue, nbox:box, giorni:giorni, prezzoxgg:pxgg, arrayTurni:arrayTurni, arrayPrezzi:arrayPrezzi}, insScaricoFn, "json");
+		$.post("scaricoIns.php",  {patente:fonpatente, documento: documento, dataScarico:dataScarico, cfg:cfg, prezzo:prezzo , id:idSel,codEv:codEv,radioValue:radioValue, nbox:box, giorni:giorni, prezzoxgg:pxgg, arrayTurni:arrayTurni}, insScaricoFn, "json");
 	}else{
 		alert('Si è verificato un errore. Si prega di riprovare.');
 	}

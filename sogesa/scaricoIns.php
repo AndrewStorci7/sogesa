@@ -10,11 +10,6 @@ if(isset($_POST['patente'])){
 }else{
 	$patente="";
 }
-if(isset($_POST['nbox'])){
-	$n_box = $_POST['nbox'];
-}else{
-	$n_box = "";
-}
 if(isset($_POST['documento'])){
 	$documento=$_POST['documento'];
 }else{
@@ -48,29 +43,19 @@ if(isset($_POST['codEv'])){
 }else{
 	$codEv = "";
 }
-if(isset($_POST['giorni'])){
-	$giorni = $_POST['giorni'];
-}else{
-	$giorni = "";
-}
-
-if(isset($_POST['prezzoxgg'])){
-	$prezzoxgg = $_POST['prezzoxgg'];
-}else{
-	$prezzoxgg = "";
-}
 
 /* MODIFICHE DI ANDREW drink */
-/*$turniArray = array();
+$nbox = isset($_POST['nbox']) ? $_POST['nbox'] : "";
+$giorni = isset($_POST['giorni']) ? $_POST['giorni'] : "";
+$prezzoxgg = isset($_POST['prezzoxgg']) ? $_POST['prezzoxgg'] : "";
+$prezzo = isset($_POST['arrayTurni']) ? $_POST['arrayTurni'] : $prezzo = "";
+$turniArray = array();
 for($i = 0; $i < 100; $i++){
-	$prezzo = isset($_POST['pturno' . $i]) ?? $_POST['pturno' . $i] :: $prezzo = "";
 	//$turno = isset($_POST['nturno' . $i]) ?? $_POST['nturno' . $i] :: $turno = "";
-	if($prezzo == "" || $turno == ""){
-		echo $i;
-	} else {
-		$turniArray[$i] = $prezzo;
+	if($prezzo !== ""){
+		$turniArray[$i] = $prezzo[$i];*
 	}
-}*/
+}
 
 $prezzo =  htmlentities($prezzo, ENT_QUOTES, "UTF-8");
 $prezzo = my_htmlentities($prezzo);
@@ -88,8 +73,6 @@ $codEv = htmlentities($codEv, ENT_QUOTES, "UTF-8");
 $codEv = my_htmlentities($codEv);
 $documento =  htmlentities($documento, ENT_QUOTES, "UTF-8");
 $documento = my_htmlentities($documento);
-
-
 
 /* FINE MODIFICHE DI ANDREW drink */
 
