@@ -124,6 +124,20 @@ var box = 0;
 var giorni = 0;
 var prezzo = 0;
 var arrayTurni = new Array();
+var nome_ac='';
+var cognome_ac='';
+var cf_ac='';
+var luogo_ac='';
+var nascita_ac='';
+var via_ac='';
+var citta_ac='';
+var email_ac='';
+var telefono_ac=0;
+var patente_ac='';
+var scadpat_ac='';
+var licenza_ac='';
+var scadlic_ac='';
+
 //var arrayPrezzi = new Array();
 
 $("#conferma").click(function(){
@@ -174,6 +188,32 @@ $("#conferma").click(function(){
 	giorni = $.trim(giorni);
 	pxgg = $('#fon-prezzoxgg').val();
 	pxgg = $.trim(pxgg);
+	nome_ac = $('#nome_ac').val();
+	nome_ac = $.trim(nome_ac);
+	cognome_ac = $('#cognome_ac').val();
+	cognome_ac = $.trim(cognome_ac);
+	cf_ac = $('#cf_ac').val();
+	cf_ac = $.trim(cf_ac);
+	luogo_ac = $('#luogo_ac').val();
+	luogo_ac = $.trim(luogo_ac);
+	nascita_ac = $('#nascita_ac').val();
+	nascita_ac = $.trim(nascita_ac);
+	via_ac = $('#via_ac').val();
+	via_ac = $.trim(via_ac);
+	citta_ac = $('#citta_ac').val();
+	citta_ac = $.trim(citta_ac);
+	email_ac = $('#email_ac').val();
+	email_ac = $.trim(email_ac);
+	telefono_ac = $('#telefono_ac').val();
+	telefono_ac = $.trim(telefono_ac);
+	patente_ac = $('#patente_ac').val();
+	patente_ac = $.trim(patente_ac);
+	scadpat_ac = $('#scadpat_ac').val();
+	scadpat_ac = $.trim(scadpat_ac);
+	licenza_ac = $('#licenza_ac').val();
+	licenza_ac = $.trim(licenza_ac);
+	scadlic_ac = $('#scadlic_ac').val();
+	scadlic_ac = $.trim(scadlic_ac);
 	for(let y = 1; y <= i; y++){
 		//var idCss = '#fon-nturno' + y;
 		var idCssCosti = '#fon-prezzonturno' + y;
@@ -181,6 +221,13 @@ $("#conferma").click(function(){
 		arrayTurni[y] = $(idCssCosti).val();
 		//console.log(arrayTurni[y-1]);
 	}
+
+	if(document.checkMinorenne.checked){
+		alert("E' spuntato");
+	}else {
+		alert("Non è spuntato");
+	}
+
 	/* FINE MODIFICHE DI ANDREW drink */
 
 	if(nome.length<1)
@@ -331,6 +378,12 @@ $( function() {
 	$( "#dataScarico" ).datepicker({
 		dateFormat: 'dd/mm/yy'
 	});
+});
+
+$(document).ready( function(){
+$("#miaimmagine").hide();
+$("#bottoneMinorenne").click( function(){
+$("#miaimmagine").toggle("slow");});
 });
 
 </script>
