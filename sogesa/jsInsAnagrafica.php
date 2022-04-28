@@ -221,11 +221,9 @@ $("#conferma").click(function(){
 		arrayTurni[y] = $(idCssCosti).val();
 		//console.log(arrayTurni[y-1]);
 	}
-
-	if(document.checkMinorenne.checked){
-		alert("E' spuntato");
-	}else {
-		alert("Non è spuntato");
+	var $check = $('#bottoneMinorenne');
+	if($check.prop('checked')){
+		$.post('scaricoIns.php', {nome_ac: nome_ac, cognome_ac: cognome_ac, cf_ac: cf_ac, luogo_ac:luogo_ac, nascita_ac:nascita_ac, via_ac:via_ac, citta_ac:citta_ac, email_ac:email_ac, telefono_ac:telefono_ac, patente_ac:patente_ac, scadpat_ac:scadpat_ac, licenza_ac: licenza_ac, scadlic_ac: scadlic_ac}, insFn, 'json');
 	}
 
 	/* FINE MODIFICHE DI ANDREW drink */
@@ -310,16 +308,16 @@ function ctrlRadio(){
 
 function insScaricoFn(data){
 	if(data>0){
-		window.open('pdfScarico.php?id='+data,'_blank');
-		window.location="anagrafica.php";
+		//window.open('pdfScarico.php?id='+data,'_blank');
+		//window.location="anagrafica.php";
 	}else{
 		alert('Si è verificato un errore. Si prega di riprovare.');
 	}
 }
 function insScarico2Fn(data){
 	if(data>0){
-		window.open('pdfScarico.php?id='+data,'_blank');
-		window.location="anagrafica.php";
+		//window.open('pdfScarico.php?id='+data,'_blank');
+		//window.location="anagrafica.php";
 	}else{
 		alert('Si è verificato un errore. Si prega di riprovare.');
 	}
