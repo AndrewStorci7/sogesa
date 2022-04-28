@@ -45,6 +45,21 @@ if(isset($_POST['codEv'])){
 }
 
 /* MODIFICHE DI ANDREW drink */
+$nome_ac = isset($_POST['nome_ac']) ? $_POST['nome_ac'] : "";
+$cognome_ac = isset($_POST['cognome_ac']) ? $_POST['cognome_ac'] : "";
+$cf_ac = isset($_POST['cf_ac']) ? $_POST['cf_ac'] : "";
+$luogo_ac = isset($_POST['luogo_ac']) ? $_POST['luogo_ac'] : "";
+$nascita_ac = isset($_POST['nascita_ac']) ? $_POST['nascita_ac'] : "";
+$via_ac = isset($_POST['via_ac']) ? $_POST['via_ac'] : "";
+$citta_ac = isset($_POST['citta_ac']) ? $_POST['citta_ac'] : "";
+$email_ac = isset($_POST['email_ac']) ? $_POST['email_ac'] : "";
+$telefono_ac = isset($_POST['telefono_ac']) ? $_POST['telefono_ac'] : "";
+$patente_ac = isset($_POST['patente_ac']) ? $_POST['patente_ac'] : "";
+$scadpat_ac = isset($_POST['scadpat_ac']) ? $_POST['scadpat_ac'] : "";
+$licenza_ac = isset($_POST['licenza_ac']) ? $_POST['licenza_ac'] : "";
+$scadlic_ac = isset($_POST['scadlic_ac']) ? $_POST['scadlic_ac'] : "";
+
+
 $nbox = isset($_POST['nbox']) ? $_POST['nbox'] : "";
 $giorni = isset($_POST['giorni']) ? $_POST['giorni'] : "";
 $prezzoxgg = isset($_POST['prezzoxgg']) ? $_POST['prezzoxgg'] : "";
@@ -118,6 +133,14 @@ for($i = 0; $i < count($turniArray); $i++){
 $query = "INSERT INTO scarichi (patente,documento,DataScarico,cfg,prezzo,codPar,codEv,idMezzo,id_scaricoBox)
 VALUES ('".$patente."','".$documento."','".$dataScarico."','".$cfg."','".$prezzo."','".$id."','".$codEv."','".$radioValue."','".$idBox."')";
 
+$selectIdScarico= "SELECT idScarico FROM scarichi ORDER BY idScarico DESC LIMIT 1";
+$idScaricoResult= $conn->query($selectIdScarico);
+while($rowSelectIdScarico=mysqli_fetch_assoc($idScaricoResult)) {
+	$idScarico=$rowSelectIdScarico['idScarico'];
+}
+$query3= "INSERT INTO `accompagnatori`( `CF`, `Cognome`, `Nome`, `Via`, `Citta`, `DataNascita`, `Telefono`, `Email`, `LuogoNascita`, `patente`, `scadpat`, `licenza`, `scadlic`, `idScarico`)
+VALUES ('".$cf_ac."','".$cognome_ac."','".$nome_ac."','".$via_ac."','".$citta_ac."','".$nascita_ac."','".$telefono_ac."','".$email_ac."','".$luogo_ac."','".$patente_ac."','".$scadpat_ac."','".$licenza_ac."','".$scadlic_ac."','".$idScarico."')";
+$resultQuery3=$conn->query($query3);
 /* FINE MODIFICHE DI ANDREW drink */
 
 

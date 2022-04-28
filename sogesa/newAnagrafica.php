@@ -140,11 +140,11 @@ include('header.php');
 
 					<div class="fon-itemDtl">
 						<h4>Nome</h4>
-						<input id="nome_ac" class="input fon-change" type="text" name="nome_ac" value="">
+						<input id="nome_ac" class="input fon-change" type="text" name="nome_ac" >
 					</div>
 					<div class="fon-itemDtl">
 						<h4>Cognome</h4>
-						<input id="cognome_ac" class="input fon-change" type="text" name="cognome_ac" value="">
+						<input id="cognome_ac" class="input fon-change" type="text" name="cognome_ac" >
 					</div>
 					<div class="fon-itemDtl">
 						<h4>CF</h4>
@@ -152,7 +152,7 @@ include('header.php');
 					</div>
 					<div class="fon-itemDtl">
 						<h4>Luogo di nascita</h4>
-						<input class="input" id="luogo_ac" type="text" name="luogo_ac" value="">
+						<input class="input" id="luogo_ac" type="text" name="luogo_ac" >
 					</div>
 					<div class="fon-itemDtl">
 						<h4>Data di nascita</h4>
@@ -160,7 +160,7 @@ include('header.php');
 					</div>
 					<div class="fon-itemDtl">
 						<h4>Via</h4>
-						<input class="input" id="via_ac" type="text" name="via_ac" value="">
+						<input class="input" id="via_ac" type="text" name="via_ac" >
 					</div>
 					<div class="fon-itemDtl">
 						<h4>Città</h4>
@@ -168,7 +168,7 @@ include('header.php');
 					</div>
 					<div class="fon-itemDtl">
 						<h4>Email</h4>
-						<input class="input" id="email_ac" type="text" name="email_ac" value="">
+						<input class="input" id="email_ac" type="text" name="email_ac" >
 					</div>
 					<div class="fon-itemDtl">
 						<h4>Telefono</h4>

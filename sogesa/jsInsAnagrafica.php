@@ -214,6 +214,7 @@ $("#conferma").click(function(){
 	licenza_ac = $.trim(licenza_ac);
 	scadlic_ac = $('#scadlic_ac').val();
 	scadlic_ac = $.trim(scadlic_ac);
+	console.log(nome_ac, cognome_ac, cf_ac, luogo_ac, nascita_ac, via_ac, citta_ac, email_ac, telefono_ac, patente_ac, scadpat_ac, licenza_ac,  scadlic_ac)
 	for(let y = 1; y <= i; y++){
 		//var idCss = '#fon-nturno' + y;
 		var idCssCosti = '#fon-prezzonturno' + y;
