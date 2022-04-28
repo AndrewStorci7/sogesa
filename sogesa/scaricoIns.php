@@ -58,7 +58,7 @@ $patente_ac = isset($_POST['patente_ac']) ? $_POST['patente_ac'] : "";
 $scadpat_ac = isset($_POST['scadpat_ac']) ? $_POST['scadpat_ac'] : "";
 $licenza_ac = isset($_POST['licenza_ac']) ? $_POST['licenza_ac'] : "";
 $scadlic_ac = isset($_POST['scadlic_ac']) ? $_POST['scadlic_ac'] : "";
-
+echo $nome_ac." ".$cognome_ac;
 
 $nbox = isset($_POST['nbox']) ? $_POST['nbox'] : "";
 $giorni = isset($_POST['giorni']) ? $_POST['giorni'] : "";
@@ -89,6 +89,31 @@ $codEv = htmlentities($codEv, ENT_QUOTES, "UTF-8");
 $codEv = my_htmlentities($codEv);
 $documento =  htmlentities($documento, ENT_QUOTES, "UTF-8");
 $documento = my_htmlentities($documento);
+
+$nome_ac =  htmlentities($nome_ac, ENT_QUOTES, "UTF-8");
+$nome_ac = my_htmlentities($nome_ac);
+$cognome_ac =  htmlentities($cognome_ac, ENT_QUOTES, "UTF-8");
+$cognome_ac = my_htmlentities($cognome_ac);
+$cf_ac =  htmlentities($cf_ac, ENT_QUOTES, "UTF-8");
+$cf_ac = my_htmlentities($cf_ac);
+$luogo_ac = htmlentities($luogo_ac, ENT_QUOTES, "UTF-8");
+$luogo_ac = my_htmlentities($luogo_ac);
+$nascita_ac = htmlentities($nascita_ac, ENT_QUOTES, "UTF-8");
+$nascita_ac = my_htmlentities($nascita_ac);
+$via_ac = htmlentities($via_ac, ENT_QUOTES, "UTF-8");
+$via_ac = my_htmlentities($via_ac);
+$email_ac = htmlentities($email_ac, ENT_QUOTES, "UTF-8");
+$email_ac = my_htmlentities($email_ac);
+$telefono_ac =  htmlentities($telefono_ac, ENT_QUOTES, "UTF-8");
+$telefono_ac = my_htmlentities($telefono_ac);
+$patente_ac = htmlentities($patente_ac, ENT_QUOTES, "UTF-8");
+$patente_ac = my_htmlentities($patente_ac);
+$scadpat_ac = htmlentities($scadpat_ac, ENT_QUOTES, "UTF-8");
+$scadpat_ac = my_htmlentities($scadpat_ac);
+$licenza_ac = htmlentities($licenza_ac, ENT_QUOTES, "UTF-8");
+$licenza_ac = my_htmlentities($licenza_ac);
+$scadlic_ac =  htmlentities($scadlic_ac, ENT_QUOTES, "UTF-8");
+$scadlic_ac = my_htmlentities($scadlic_ac);
 
 /* FINE MODIFICHE DI ANDREW drink */
 
@@ -141,6 +166,7 @@ while($rowSelectIdScarico=mysqli_fetch_assoc($idScaricoResult)) {
 $query3= "INSERT INTO `accompagnatori`( `CF`, `Cognome`, `Nome`, `Via`, `Citta`, `DataNascita`, `Telefono`, `Email`, `LuogoNascita`, `patente`, `scadpat`, `licenza`, `scadlic`, `idScarico`)
 VALUES ('".$cf_ac."','".$cognome_ac."','".$nome_ac."','".$via_ac."','".$citta_ac."','".$nascita_ac."','".$telefono_ac."','".$email_ac."','".$luogo_ac."','".$patente_ac."','".$scadpat_ac."','".$licenza_ac."','".$scadlic_ac."','".$idScarico."')";
 $resultQuery3=$conn->query($query3);
+echo $query3;
 /* FINE MODIFICHE DI ANDREW drink */
 
 
