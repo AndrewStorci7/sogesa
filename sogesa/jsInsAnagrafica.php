@@ -182,6 +182,7 @@ $("#conferma").click(function(){
 	codEv=$("#codEv").val();
 
 	/* MODIFICHE DI ANDREW drink */
+	var $check = $('#bottoneMinorenne');
 	box = $('#fon-box').val();
 	box = $.trim(box);
 	giorni = $('#fon-giorni').val();
@@ -218,12 +219,6 @@ $("#conferma").click(function(){
 	for(let y = 1; y <= i; y++){
 		var idCssCosti = '#fon-prezzonturno' + y;
 		arrayTurni[y] = $(idCssCosti).val();
-	}
-	var $check = $('#bottoneMinorenne');
-	if($check.prop('checked')){
-		$.post('scaricoIns.php', {nome_ac: nome_ac, cognome_ac: cognome_ac, cf_ac: cf_ac, luogo_ac:luogo_ac, nascita_ac:nascita_ac, via_ac:via_ac, citta_ac:citta_ac, email_ac:email_ac, telefono_ac:telefono_ac, patente_ac:patente_ac, scadpat_ac:scadpat_ac, licenza_ac: licenza_ac, scadlic_ac: scadlic_ac}, function(resp){
-			alert(resp);
-		}, 'json');
 	}
 
 	/* FINE MODIFICHE DI ANDREW drink */
@@ -308,6 +303,18 @@ function ctrlRadio(){
 
 function insScaricoFn(data){
 	if(data>0){
+		var idScarico = data;
+		if($check.prop('checked')){
+			$.post('accompagnatoreIns.php', {nome_ac: nome_ac, cognome_ac: cognome_ac, cf_ac: cf_ac, luogo_ac:luogo_ac, nascita_ac:nascita_ac, via_ac:via_ac, citta_ac:citta_ac, email_ac:email_ac, telefono_ac:telefono_ac, patente_ac:patente_ac, scadpat_ac:scadpat_ac, licenza_ac: licenza_ac, scadlic_ac: scadlic_ac, idScarico:idScarico}, function(resp){
+				// INSERIRE IL PDF PER MINORENNI
+				//window.open('pdfScarico.php?id='+data,'_blank');
+				//window.location="anagrafica.php";
+				alert('minorenne');
+			}, 'json');
+		} else {
+			window.open('pdfScarico.php?id='+data,'_blank');
+			window.location="anagrafica.php";
+		}
 		//window.open('pdfScarico.php?id='+data,'_blank');
 		//window.location="anagrafica.php";
 	}else{
@@ -316,6 +323,18 @@ function insScaricoFn(data){
 }
 function insScarico2Fn(data){
 	if(data>0){
+		var idScarico = data;
+		if($check.prop('checked')){
+			$.post('accompagnatoreIns.php', {nome_ac: nome_ac, cognome_ac: cognome_ac, cf_ac: cf_ac, luogo_ac:luogo_ac, nascita_ac:nascita_ac, via_ac:via_ac, citta_ac:citta_ac, email_ac:email_ac, telefono_ac:telefono_ac, patente_ac:patente_ac, scadpat_ac:scadpat_ac, licenza_ac: licenza_ac, scadlic_ac: scadlic_ac, idScarico:idScarico}, function(resp){
+				// INSERIRE PDF PER MINORENNE
+				//window.open('pdfScarico.php?id='+data,'_blank');
+				//window.location="anagrafica.php";
+				alert('minorenne');
+			}, 'json');
+		} else {
+			window.open('pdfScarico.php?id='+data,'_blank');
+			window.location="anagrafica.php";
+		}
 		//window.open('pdfScarico.php?id='+data,'_blank');
 		//window.location="anagrafica.php";
 	}else{

@@ -158,15 +158,6 @@ for($i = 0; $i < count($turniArray); $i++){
 $query = "INSERT INTO scarichi (patente,documento,DataScarico,cfg,prezzo,codPar,codEv,idMezzo,id_scaricoBox)
 VALUES ('".$patente."','".$documento."','".$dataScarico."','".$cfg."','".$prezzo."','".$id."','".$codEv."','".$radioValue."','".$idBox."')";
 
-$selectIdScarico= "SELECT idScarico FROM scarichi ORDER BY idScarico DESC LIMIT 1";
-$idScaricoResult= $conn->query($selectIdScarico);
-while($rowSelectIdScarico=mysqli_fetch_assoc($idScaricoResult)) {
-	$idScarico=$rowSelectIdScarico['idScarico'];
-}
-$query3= "INSERT INTO `accompagnatori`( `CF`, `Cognome`, `Nome`, `Via`, `Citta`, `DataNascita`, `Telefono`, `Email`, `LuogoNascita`, `patente`, `scadpat`, `licenza`, `scadlic`, `idScarico`)
-VALUES ('".$cf_ac."','".$cognome_ac."','".$nome_ac."','".$via_ac."','".$citta_ac."','".$nascita_ac."','".$telefono_ac."','".$email_ac."','".$luogo_ac."','".$patente_ac."','".$scadpat_ac."','".$licenza_ac."','".$scadlic_ac."','".$idScarico."')";
-$resultQuery3=$conn->query($query3);
-echo $query3;
 /* FINE MODIFICHE DI ANDREW drink */
 
 
@@ -192,7 +183,7 @@ if($result){
 	}
 
 
-	$yy="SELECT * FROM scarichi ORDER BY idScarico DESC";
+	$yy="SELECT * FROM scarichi ORDER BY idScarico DESC LIMIT 1";
 
 	$resulty = mysqli_query($conn,$yy);
 
