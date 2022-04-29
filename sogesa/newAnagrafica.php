@@ -120,7 +120,84 @@ include('header.php');
 			</select>
 			<input type="text" id="mesefa" value="1" style="width:50px; margin-left:20px; margin-right:5px;" /><span>mesi precedenti</span>
 		</div>
+		<div class="fon-itemDtl">
+			<h4>E' minorenne?</h4>
+		<input type="checkbox" id="bottoneMinorenne" name="checkMinorenne" value="Bike">
+	  </div>
 	</fieldset>
+</div>
+
+<div id="miaimmagine">
+<div class="fon-listaanagrafica">
+	<div class="fon-modifica" style="height:auto">
+		<fieldset class="fon-fieldset">
+			<legend>Dati Accompagnatore</legend>
+			<div class="fon-left">
+				<div class="fon-rowDtl">
+
+
+
+
+					<div class="fon-itemDtl">
+						<h4>Nome</h4>
+						<input id="nome_ac" class="input fon-change" type="text" name="nome_ac" >
+					</div>
+					<div class="fon-itemDtl">
+						<h4>Cognome</h4>
+						<input id="cognome_ac" class="input fon-change" type="text" name="cognome_ac" >
+					</div>
+					<div class="fon-itemDtl">
+						<h4>CF</h4>
+						<input type="text" class="input fon-change" name="cf_ac" id="cf_ac">
+					</div>
+					<div class="fon-itemDtl">
+						<h4>Luogo di nascita</h4>
+						<input class="input" id="luogo_ac" type="text" name="luogo_ac" >
+					</div>
+					<div class="fon-itemDtl">
+						<h4>Data di nascita</h4>
+						<input class="input" type="text" name="nascita_ac" id="nascita_ac">
+					</div>
+					<div class="fon-itemDtl">
+						<h4>Via</h4>
+						<input class="input" id="via_ac" type="text" name="via_ac" >
+					</div>
+					<div class="fon-itemDtl">
+						<h4>Città</h4>
+						<input class="input" type="text" name="citta_ac" id="citta_ac">
+					</div>
+					<div class="fon-itemDtl">
+						<h4>Email</h4>
+						<input class="input" id="email_ac" type="text" name="email_ac" >
+					</div>
+					<div class="fon-itemDtl">
+						<h4>Telefono</h4>
+						<input class="input" type="text" name="telefono_ac" id="telefono_ac">
+					</div>
+					<div class="fon-itemDtl" style="clear:both;">
+						<h4>Patente</h4>
+						<input class="input" type="text" name="patente_ac" id="patente_ac">
+					</div>
+					<div class="fon-itemDtl">
+						<h4>Scadenza</h4>
+						<input class="input" type="text" name="scadpat_ac" id="scadpat_ac">
+					</div>
+					<div class="fon-itemDtl">
+						<h4>Licenza</h4>
+						<input class="input" type="text" name="licenza_ac" id="licenza_ac">
+					</div>
+					<div class="fon-itemDtl">
+						<h4>Scadenza</h4>
+						<input class="input" type="text" name="scadlic_ac" id="scadlic_ac">
+					</div>
+
+				</div>
+			</div>
+			<div class="fon-right" id="fon-right"></div>
+		</fieldset>
+
+	</div>
+</div>
 </div>
 
 <div class="fon-lista fon-listaFull fon-modifica">
