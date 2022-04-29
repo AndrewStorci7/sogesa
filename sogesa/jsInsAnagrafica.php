@@ -315,8 +315,6 @@ function insScaricoFn(data){
 			window.open('pdfScarico.php?id='+data,'_blank');
 			window.location="anagrafica.php";
 		}
-		//window.open('pdfScarico.php?id='+data,'_blank');
-		//window.location="anagrafica.php";
 	}else{
 		alert('Si è verificato un errore. Si prega di riprovare.');
 	}
@@ -335,8 +333,6 @@ function insScarico2Fn(data){
 			window.open('pdfScarico.php?id='+data,'_blank');
 			window.location="anagrafica.php";
 		}
-		//window.open('pdfScarico.php?id='+data,'_blank');
-		//window.location="anagrafica.php";
 	}else{
 		alert('Si è verificato un errore. Si prega di riprovare.');
 	}
